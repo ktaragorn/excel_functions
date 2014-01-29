@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["karthikt.holmes+github@gmail.com"]
   spec.description   = %q{Reverse engineered versions of some Excel functions}
   spec.summary       = %q{This gem can be used if you need to reverse engineer any excel spreadsheets.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/ktaragorn/excel_functions"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
