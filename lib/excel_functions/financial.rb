@@ -4,7 +4,7 @@ module ExcelFunctions
   # @param rate     is the rate of discount over the length of one period.
   # @param *values      are 1 to 29 arguments representing the payments and income.
   # @return net present value of an investment
-  # attempt to implement http://office.microsoft.com/en-sg/excel-help/npv-HP005209199.aspx
+  # @see http://office.microsoft.com/en-sg/excel-help/npv-HP005209199.aspx Specification
   def npv(rate,*values)
     #If n is the number of cash flows in the list of values, the formula for NPV is: 
     # sum upto n (values[i]/(1+rate)^i)
@@ -22,9 +22,9 @@ module ExcelFunctions
   #   0 or omitted  If payments are due At the end of the period or 
   #   1  If payments are due At the beginning of the period
   # @return [Float] payment for a loan based on the inputs
-  #attempt to implement http://office.microsoft.com/en-sg/excel-help/pmt-HP005209215.aspx
-  #first 3 params at http://answers.yahoo.com/question/index?qid=20080822070859AAY94ZT
-  # full formula at http://www.getobjects.com/Components/Finance/TVM/formulas.html
+  # @see http://office.microsoft.com/en-sg/excel-help/pmt-HP005209215.aspx Specification
+  # @see http://answers.yahoo.com/question/index?qid=20080822070859AAY94ZT  formula using first 3 params
+  # @see http://www.getobjects.com/Components/Finance/TVM/formulas.html   Full Formula
   def pmt(rate,nper,pv,fv =0,type = 0)
     #- pv/((1 - (1 / (1 + rate)**nper )) / rate)
     pv = -pv

@@ -10,7 +10,7 @@ module ExcelFunctions
   # @return   If the LOOKUP function can not find an exact match, it chooses the largest value in the lookup_range that is less than or equal to the value.
   # @return   If the value is smaller than all of the values in the lookup_range, then the LOOKUP function will return #N/A(nil in our case).
   # @return If the values in the LOOKUP_range are not sorted in ascending order, the LOOKUP function will return the incorrect value (raise error in our case).
-  #attempt to implement http://www.techonthenet.com/excel/formulas/lookup.php
+  # @see http://www.techonthenet.com/excel/formulas/lookup.php Specification
   def lookup(value, lookup_array, output_array = nil)
     #combining both syntaxes here by taking 1st col of lookup_array to lookup
     # and the output_array or the last column of the lookup_array to output
