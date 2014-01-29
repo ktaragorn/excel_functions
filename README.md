@@ -25,7 +25,7 @@ This gem can be used in 2 ways.
 2. Use the `Excel.<function>` style anywhere.
 
 #TODO 
-- more docs about the functions themselves, for now, you can take a look at the code
+- more docs about the functions themselves, for now, you can take a look at the code, or the [Yard Documentation](http://rubydoc.info/gems/excel_functions/)
 
 ## Contributing
 
