@@ -24,6 +24,9 @@ This gem can be used in 2 ways.
 1. Include `ExcelFunctions` module in the class that needs it and use its functions
 2. Use the `Excel.<function>` style anywhere.
 
+#TODO 
+- more docs about the functions themselves, for now, you can take a look at the code
+
 ## Contributing
 
 1. Fork it
