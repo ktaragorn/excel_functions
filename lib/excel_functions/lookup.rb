@@ -18,12 +18,11 @@ module ExcelFunctions
 
     lookup_array = lookup_array.map{|arr| Array(arr)[0]}
 
-    
-    raise "lookup_array must be sorted" unless lookup_array.sort == lookup_array #better way to check sorted?
-
     index = lookup_array.find_index(value)
     return output_array[index] if index
 
+    #raise only after exact check fails, we only need sorted for approx lookup
+    raise "lookup_array must be sorted" unless lookup_array.sort == lookup_array #better way to check sorted?
     
     first_greater_index = lookup_array.find_index{|look| look > value} || lookup_array.count 
     less_than_index = first_greater_index - 1
