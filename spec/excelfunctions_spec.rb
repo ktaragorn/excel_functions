@@ -15,26 +15,35 @@ describe Excel do
   end
   describe "Lookup" do
     #should this be 3 it blocks?
-    it "performs lookup correctly" do
-      input_arr =  [0,0.05,0.1,0.15]
-      output_arr = ["a","b","c","d"]
-      tests = [
+    let(:input_arr){[0,0.05,0.1,0.15]}
+    let(:output_arr){["a","b","c","d"]}
+    let(:tests){[
         [0, "a"],
         [0.1, "c"],
         [0.12, "c"],
         [1, "d"],
         [-1, nil]
-      ]
+      ]}
+    it "performs lookup correctly with 2 arrays" do
       #2 arrays
       tests.each do |(value, result)|
         expect(Excel.lookup(value,input_arr, output_arr)).to be_eql(result)
       end
+    end
+    it "performs lookup correctly with 1 array" do
       #single array
       tests.each do |(value, result)|
         expect(Excel.lookup(value,input_arr.zip(output_arr))).to be_eql(result)
       end
+    end
 
-      expect{Excel.lookup(0.1,input_arr.reverse,output_arr)}.to raise_error
+    context "Unsorted arrays" do
+      it "raises error if unsorted and rough match" do
+        expect{Excel.lookup(0.11,input_arr.reverse,output_arr)}.to raise_error
+      end
+      it "doesnt raise error if unsorted but has exact match" do
+        expect{Excel.lookup(0.1,input_arr.reverse,output_arr)}.to_not raise_error
+      end
     end
   end
 end
